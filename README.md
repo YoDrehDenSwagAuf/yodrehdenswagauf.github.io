@@ -22,13 +22,6 @@ npm run build
 npm run preview
 ```
 
-## Deploy
-
-Pushes to `main` are built and published automatically with GitHub Actions.
-For the repository `yodrehdenswagauf.github.io`, the production site is:
-
-`https://yodrehdenswagauf.github.io/`
-
 ## Swap placeholders
 
 | What | Where |
