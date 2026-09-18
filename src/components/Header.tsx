@@ -21,6 +21,7 @@ export function Header() {
             <span className="nav-wordmark-games" aria-hidden="true">
               Studio
             </span>
+            <span className="nav-boot-sweep" aria-hidden="true" />
           </span>
         </a>
         <ul className="nav-links">

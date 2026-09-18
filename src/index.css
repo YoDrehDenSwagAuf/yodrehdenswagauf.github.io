@@ -109,6 +109,9 @@ code {
 }
 
 .nav-pill {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -116,12 +119,35 @@ code {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0.62rem 0.7rem 0.62rem 1.05rem;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--fog) 88%, transparent);
-  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
-  box-shadow: 0 12px 32px rgb(0 0 0 / 0.22);
-  backdrop-filter: blur(16px);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 0.34), rgb(255 255 255 / 0.08) 48%, rgb(245 197 24 / 0.1)),
+    color-mix(in srgb, var(--fog) 70%, transparent);
+  border: 1px solid rgb(255 255 255 / 0.48);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.72),
+    inset 0 -1px 0 rgb(47 52 60 / 0.12),
+    0 14px 38px rgb(0 0 0 / 0.24);
+  -webkit-backdrop-filter: blur(24px) saturate(155%);
+  backdrop-filter: blur(24px) saturate(155%);
   color: var(--ink);
+}
+
+.nav-pill::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 0%, rgb(255 255 255 / 0.62), transparent 34%),
+    linear-gradient(100deg, transparent 38%, rgb(255 255 255 / 0.18) 50%, transparent 62%);
+  opacity: 0.78;
+}
+
+.nav-pill > * {
+  position: relative;
+  z-index: 1;
 }
 
 .nav-brand {
@@ -133,10 +159,43 @@ code {
 }
 
 .nav-wordmark {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 0;
+}
+
+.nav-boot-sweep {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 34%;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(255 255 255 / 0.92) 48%,
+    rgb(245 197 24 / 0.55) 64%,
+    transparent
+  );
+  mix-blend-mode: screen;
+}
+
+.nav-brand:hover .nav-wordmark-line,
+.nav-brand:focus-visible .nav-wordmark-line {
+  animation: boot-drop 0.62s 0.04s cubic-bezier(0.18, 0.9, 0.22, 1.12) both;
+}
+
+.nav-brand:hover .nav-wordmark-games,
+.nav-brand:focus-visible .nav-wordmark-games {
+  animation: boot-games 0.52s 0.72s cubic-bezier(0.14, 0.92, 0.2, 1.18) both;
+}
+
+.nav-brand:hover .nav-boot-sweep,
+.nav-brand:focus-visible .nav-boot-sweep {
+  animation: boot-sweep 0.58s 0.42s ease-out both;
 }
 
 .nav-wordmark-line {
@@ -1061,6 +1120,10 @@ code {
   max-width: 42rem;
 }
 
+.about-title span {
+  display: block;
+}
+
 .site-footer {
   background: var(--espresso);
   color: var(--cream);
@@ -1362,7 +1425,13 @@ code {
 
   .hero-boot .hero-name,
   .hero-boot .hero-games,
-  .hero-boot .hero-boot-sweep {
+  .hero-boot .hero-boot-sweep,
+  .nav-brand:hover .nav-wordmark-line,
+  .nav-brand:hover .nav-wordmark-games,
+  .nav-brand:hover .nav-boot-sweep,
+  .nav-brand:focus-visible .nav-wordmark-line,
+  .nav-brand:focus-visible .nav-wordmark-games,
+  .nav-brand:focus-visible .nav-boot-sweep {
     animation: none !important;
     transform: none !important;
     filter: none !important;

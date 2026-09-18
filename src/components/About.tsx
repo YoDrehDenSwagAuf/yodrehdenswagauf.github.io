@@ -9,7 +9,10 @@ export function About() {
             <span>Independent studio</span>
             <span>Germany</span>
           </p>
-          <h2>Made by Marcel.</h2>
+          <h2 className="about-title">
+            <span>Made by</span>
+            <span>Marcel.</span>
+          </h2>
         </Reveal>
         <div className="about-copy">
           <Reveal delay="80ms">

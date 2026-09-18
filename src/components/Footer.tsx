@@ -23,7 +23,12 @@ export function Footer() {
             </a>
           </li>
           <li>
-            <PlaceholderLink label="itch.io" href={studio.itch} hint="Store page placeholder" />
+            <PlaceholderLink
+              label="itch.io"
+              href={studio.itch}
+              hint="Store page placeholder"
+              liveText="yodrehdenswagauf.itch.io"
+            />
           </li>
           <li>
             <PlaceholderLink
@@ -61,16 +66,18 @@ function PlaceholderLink({
   label,
   href,
   hint,
+  liveText = 'Live link',
 }: {
   label: string
   href: string | null
   hint: string
+  liveText?: string
 }) {
   if (href) {
     return (
       <a href={href} target="_blank" rel="noreferrer">
         {label}
-        <small>Live link</small>
+        <small>{liveText}</small>
       </a>
     )
   }

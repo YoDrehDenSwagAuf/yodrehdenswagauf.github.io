@@ -6,7 +6,7 @@ export const studio = {
   taglineDe: 'Digitale Projekte mit Persönlichkeit. Gemacht in Deutschland.',
   email: 'hello@yodrehdenswagauf.example',
   github: 'https://github.com/YoDrehDenSwagAuf',
-  itch: null as string | null,
+  itch: 'https://yodrehdenswagauf.itch.io/' as string | null,
   coffee: null as string | null,
 }
 
