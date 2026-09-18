@@ -8,14 +8,14 @@ export function Devlog() {
         <Reveal>
           <p className="eyebrow">
             <span>Build notes</span>
-            <span>Not a blog — yet</span>
+            <span>Not a blog yet</span>
           </p>
           <h2>Progress lives on social.</h2>
         </Reveal>
         <Reveal delay="90ms">
           <p className="lede">
-            Sketches, crank-cam clips, and prototype noise show up on Instagram, TikTok, and X first.
-            Handles are reserved until those accounts go live.
+            Game prototypes, mod updates, interface experiments, and work in progress from across
+            the studio show up here first. Handles are reserved until those accounts go live.
           </p>
         </Reveal>
         <div className="social-grid">

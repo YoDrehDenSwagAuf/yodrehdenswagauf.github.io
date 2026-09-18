@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { CoverHover, CoverId, GameStatus } from '../data/games'
+import type { CoverHover, CoverId, ProjectStatus } from '../data/games'
 import { CrankyTanksCover } from './CrankyTanksCover'
 import { CrtCover } from './CrtCover'
 
@@ -7,7 +7,7 @@ type Props = {
   id: CoverId
   title: string
   catalogNo: string
-  status: GameStatus
+  status: ProjectStatus
   src?: string
   fallback?: string
   hover?: CoverHover

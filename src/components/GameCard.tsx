@@ -1,16 +1,13 @@
 import { useState } from 'react'
-import { statusCopy, type Game } from '../data/games'
+import { statusCopy, type Project } from '../data/games'
 import { GameCover } from './GameCover'
-import { TrailerDialog } from './TrailerDialog'
 
 type Props = {
-  game: Game
+  game: Project
 }
 
 export function GameCard({ game }: Props) {
-  const [trailerOpen, setTrailerOpen] = useState(false)
   const [hot, setHot] = useState(false)
-  const canEmbed = Boolean(game.links.trailerEmbed)
   const wrapImage = game.coverHover?.idle ?? game.coverImage
 
   return (
@@ -56,29 +53,15 @@ export function GameCard({ game }: Props) {
         </div>
         <h3>
           {game.title}
-          {game.workingTitle ? <small> working title</small> : null}
+          {game.workingTitle ? <small> {game.workingTitle}</small> : null}
         </h3>
         <p>{game.blurb}</p>
         <div className="game-actions">
-          <StoreButton label="Catalog" href={game.links.catalog} emptyTitle="Playdate Catalog link coming later" />
-          <StoreButton label="itch.io" href={game.links.itch} emptyTitle="itch.io page not live yet" />
-          {canEmbed ? (
-            <button type="button" className="mini-btn" onClick={() => setTrailerOpen(true)}>
-              Trailer
-            </button>
-          ) : (
-            <StoreButton label="Trailer" href={game.links.trailer} emptyTitle="Trailer not uploaded yet" />
-          )}
+          {game.actions.map((action) => (
+            <StoreButton key={action.label} label={action.label} href={action.href} emptyTitle={action.hint} />
+          ))}
         </div>
       </div>
-      {game.links.trailerEmbed ? (
-        <TrailerDialog
-          title={game.title}
-          embedUrl={game.links.trailerEmbed}
-          open={trailerOpen}
-          onClose={() => setTrailerOpen(false)}
-        />
-      ) : null}
     </article>
   )
 }

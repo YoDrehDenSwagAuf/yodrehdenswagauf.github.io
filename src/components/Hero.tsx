@@ -50,22 +50,22 @@ export function Hero() {
         <div className="hero-copy">
           <Reveal>
             <p className="eyebrow">
-              <span>{studio.catalogVolume}</span>
-              <span>Studio catalog</span>
-              <span>{studio.founder}</span>
+              <span>Games</span>
+              <span>Websites</span>
+              <span>Mods</span>
+              <span>Apps</span>
             </p>
           </Reveal>
           <h1
             className={`hero-title${booting ? ' hero-boot' : ''}`}
-            aria-label="YoDrehDenSwagAuf - Games"
+            aria-label="YoDrehDenSwagAuf Studio"
           >
             <span className="hero-line" aria-hidden="true">
-              <span className="hero-yo">Yo</span>
-              <span className="hero-rest">DrehDenSwagAuf</span>
+              <span className="hero-name">YoDrehDenSwagAuf</span>
               <span className="hero-boot-sweep" />
             </span>
             <span className="hero-games" aria-hidden="true">
-              Games
+              Studio
             </span>
           </h1>
           <Reveal delay={booting ? '1180ms' : '160ms'}>
@@ -76,8 +76,8 @@ export function Hero() {
           </Reveal>
           <Reveal delay={booting ? '1320ms' : '220ms'}>
             <div className="hero-ctas">
-              <a className="pill pill-solid" href="#games">
-                Browse games
+              <a className="pill pill-solid" href="#projects">
+                Browse projects
               </a>
               <a className="pill pill-ghost" href="#devlog">
                 Follow the build

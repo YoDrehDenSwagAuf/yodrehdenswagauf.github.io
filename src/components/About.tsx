@@ -6,39 +6,39 @@ export function About() {
       <div className="about-grid">
         <Reveal>
           <p className="eyebrow">
-            <span>Solo studio</span>
+            <span>Independent studio</span>
             <span>Germany</span>
           </p>
-          <h2>Made by Marcel Fischer.</h2>
+          <h2>Made by Marcel.</h2>
         </Reveal>
         <div className="about-copy">
           <Reveal delay="80ms">
             <p>
-              YoDrehDenSwagAuf is a one-person studio. Marcel Fischer designs short, tactile games
-              for Playdate, PC, and the browser: pixel-forward, a little chaotic, meant to be
-              finished in a sitting and remembered for how they feel to play.
+              YoDrehDenSwagAuf is an independent studio for games, websites, mods, and apps.
+              Every project starts with a useful idea, a distinct personality, and the goal of
+              turning experiments into things people enjoy using.
             </p>
           </Reveal>
           <Reveal delay="140ms">
             <p lang="de">
-              Der Name ist eine Ansage: dreh den Swag auf. Kleine Arcade-Happen, ehrliche
-              Minigames aus der Werkbank — für die Hosentasche, den Desktop, und alles dazwischen.
-              Keine AAA-Versprechen.
+              Der Name ist eine Ansage: Dreh den Swag auf. Hier entstehen eigenständige Spiele,
+              praktische Apps, kreative Websites und Mods mit Charakter. Direkt aus der Werkbank,
+              ohne leere Versprechen und mit sichtbarer Freude am Ausprobieren.
             </p>
           </Reveal>
           <Reveal delay="180ms">
             <ul className="about-facts">
               <li>
                 <strong>Focus</strong>
-                Playdate, PC, and web — short-session games
+                Games, websites, mods, and apps
               </li>
               <li>
                 <strong>Shape</strong>
-                Minigames first, sequels later
+                Clear ideas, playful details, useful results
               </li>
               <li>
                 <strong>Place</strong>
-                Built in Germany, shipped where the session fits
+                Built in Germany, shared wherever it fits
               </li>
             </ul>
           </Reveal>

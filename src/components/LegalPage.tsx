@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { studio } from '../data/studio'
 
 type Kind = 'impressum' | 'privacy'
@@ -25,6 +26,33 @@ export function LegalPage({ kind }: Props) {
   )
 }
 
+export function LegalDialog({ kind, open, onClose }: Props & { open: boolean; onClose: () => void }) {
+  const dialogRef = useRef<HTMLDialogElement>(null)
+  const title = kind === 'impressum' ? 'Impressum' : 'Datenschutz / Privacy'
+
+  useEffect(() => {
+    const dialog = dialogRef.current
+    if (!dialog) return
+    if (open && !dialog.open) dialog.showModal()
+    if (!open && dialog.open) dialog.close()
+  }, [open])
+
+  return (
+    <dialog ref={dialogRef} className="legal-dialog" onClose={onClose} aria-labelledby={`${kind}-dialog-title`}>
+      <div className="legal-dialog-inner">
+        <div className="legal-dialog-bar">
+          <div>
+            <p className="eyebrow"><span>Legal placeholder</span></p>
+            <h2 id={`${kind}-dialog-title`}>{title}</h2>
+          </div>
+          <button className="mini-btn" type="button" onClick={() => dialogRef.current?.close()}>Close</button>
+        </div>
+        {kind === 'impressum' ? <ImpressumBody /> : <PrivacyBody />}
+      </div>
+    </dialog>
+  )
+}
+
 function ImpressumBody() {
   return (
     <div className="legal-prose">
@@ -43,7 +71,7 @@ function ImpressumBody() {
         </div>
         <div>
           <dt>Anschrift</dt>
-          <dd>Straße, Hausnummer, PLZ Ort — TODO</dd>
+          <dd>Straße, Hausnummer, PLZ Ort. TODO</dd>
         </div>
         <div>
           <dt>E-Mail</dt>

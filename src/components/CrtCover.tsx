@@ -1,4 +1,4 @@
-import type { CoverId, GameStatus } from '../data/games'
+import type { CoverId, ProjectStatus } from '../data/games'
 
 type Tone = 'gold' | 'fog' | 'amber'
 type Signal = 'unstable' | 'no-input' | 'standby'
@@ -7,7 +7,7 @@ type Props = {
   id: CoverId
   title: string
   catalogNo: string
-  status: GameStatus
+  status: ProjectStatus
   active?: boolean
 }
 
@@ -62,7 +62,7 @@ function toneFrom(id: CoverId): Tone {
   return 'fog'
 }
 
-function signalFrom(status: GameStatus, id: CoverId): Signal {
+function signalFrom(status: ProjectStatus, id: CoverId): Signal {
   if (status === 'prototype') return 'unstable'
   if (id === 'coming-soon-b') return 'standby'
   return 'no-input'

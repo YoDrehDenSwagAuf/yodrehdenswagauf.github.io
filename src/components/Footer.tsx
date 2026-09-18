@@ -1,7 +1,12 @@
+import { useState } from 'react'
 import { studio } from '../data/studio'
+import { LegalDialog } from './LegalPage'
 
 export function Footer() {
+  const [legal, setLegal] = useState<'impressum' | 'privacy' | null>(null)
+
   return (
+    <>
     <footer className="site-footer" id="links">
       <div className="footer-top">
         <div>
@@ -40,12 +45,15 @@ export function Footer() {
           © {new Date().getFullYear()} {studio.nameFull}. {studio.founder}.
         </p>
         <p>
-          <a href="/impressum">Impressum</a>
+          <a href="/impressum" onClick={(event) => { event.preventDefault(); setLegal('impressum') }}>Impressum</a>
           <span aria-hidden="true"> · </span>
-          <a href="/datenschutz">Datenschutz</a>
+          <a href="/datenschutz" onClick={(event) => { event.preventDefault(); setLegal('privacy') }}>Datenschutz</a>
         </p>
       </div>
     </footer>
+    <LegalDialog kind="impressum" open={legal === 'impressum'} onClose={() => setLegal(null)} />
+    <LegalDialog kind="privacy" open={legal === 'privacy'} onClose={() => setLegal(null)} />
+    </>
   )
 }
 
