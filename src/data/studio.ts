@@ -14,23 +14,30 @@ export const social = [
   {
     id: 'instagram',
     label: 'Instagram',
-    handle: '@yodrehdenswagauf',
-    href: null as string | null,
+    handle: '@yodrehdenswag',
+    href: 'https://www.instagram.com/yodrehdenswag/' as string | null,
     note: 'sketches + build clips',
   },
   {
     id: 'tiktok',
     label: 'TikTok',
-    handle: '@yodrehdenswagauf',
-    href: null as string | null,
+    handle: '@yodrehdenswagauf1',
+    href: 'https://www.tiktok.com/@yodrehdenswagauf1' as string | null,
     note: 'short clips from the bench',
   },
   {
     id: 'x',
     label: 'X',
-    handle: '@YoDrehDenSwag',
-    href: null as string | null,
+    handle: '@yodrehdenswag',
+    href: 'https://x.com/yodrehdenswag' as string | null,
     note: 'build notes in public',
+  },
+  {
+    id: 'reddit',
+    label: 'Reddit',
+    handle: 'u/yodrehdenswagauf',
+    href: 'https://www.reddit.com/user/yodrehdenswagauf/' as string | null,
+    note: 'projects + community posts',
   },
 ] as const
 

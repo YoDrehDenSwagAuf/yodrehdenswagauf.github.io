@@ -20,13 +20,6 @@ export function About() {
             </p>
           </Reveal>
           <Reveal delay="140ms">
-            <p lang="de">
-              Der Name ist eine Ansage: Dreh den Swag auf. Hier entstehen eigenständige Spiele,
-              praktische Apps, kreative Websites und Mods mit Charakter. Direkt aus der Werkbank,
-              ohne leere Versprechen und mit sichtbarer Freude am Ausprobieren.
-            </p>
-          </Reveal>
-          <Reveal delay="180ms">
             <ul className="about-facts">
               <li>
                 <strong>Focus</strong>

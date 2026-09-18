@@ -15,7 +15,7 @@ export function Devlog() {
         <Reveal delay="90ms">
           <p className="lede">
             Game prototypes, mod updates, interface experiments, and work in progress from across
-            the studio show up here first. Handles are reserved until those accounts go live.
+            the studio show up here first. Follow along wherever you like to keep up with the work.
           </p>
         </Reveal>
         <div className="social-grid">
