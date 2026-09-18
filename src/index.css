@@ -932,6 +932,11 @@ code {
   color: var(--fog);
 }
 
+.status-released {
+  background: #d4f06e;
+  color: var(--ink);
+}
+
 .game-body {
   display: flex;
   flex-direction: column;

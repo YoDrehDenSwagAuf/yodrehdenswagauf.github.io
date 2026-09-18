@@ -35,7 +35,7 @@ export const statusCopy: Record<ProjectStatus, string> = {
   'in-progress': 'In progress',
   prototype: 'Prototype',
   'coming-soon': 'Coming soon',
-  released: 'Out now',
+  released: 'Published',
 }
 
 const privateRepoAction = (label = 'GitHub'): ProjectAction => ({
@@ -85,7 +85,7 @@ const mods: Project[] = [
   {
     id: 'wilds-of-kanto', catalogNo: '01', title: 'Wilds of Kanto',
     blurb: "A Gen1Recomp mod that brings visible and reactive wild Pokémon into Kanto's overworld while keeping performance and atmosphere in focus.",
-    platform: 'Mod', status: 'in-progress', cover: 'coming-soon-a',
+    platform: 'Mod', status: 'released', cover: 'coming-soon-a', coverImage: '/assets/wilds-of-kanto-card.jpg',
     actions: [{ label: 'GitHub', href: 'https://github.com/YoDrehDenSwagAuf/overworld-spawn-mod', hint: 'Open public repository' }],
   },
 ]
