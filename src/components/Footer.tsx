@@ -35,6 +35,7 @@ export function Footer() {
               label="Buy Me a Coffee"
               href={studio.coffee}
               hint="Tip jar placeholder"
+              liveText="paypal.me/YoDrehDenSwagAuf"
             />
           </li>
           <li>

@@ -4,10 +4,10 @@ export const studio = {
   founder: 'Marcel Fischer',
   tagline: 'Games, websites, mods, and apps with character.',
   taglineDe: 'Digitale Projekte mit Persönlichkeit. Gemacht in Deutschland.',
-  email: 'hello@yodrehdenswagauf.example',
+  email: 'yodrehdenswagauf@gmail.com',
   github: 'https://github.com/YoDrehDenSwagAuf',
   itch: 'https://yodrehdenswagauf.itch.io/' as string | null,
-  coffee: null as string | null,
+  coffee: 'https://www.paypal.me/YoDrehDenSwagAuf' as string | null,
 }
 
 export const social = [

@@ -151,6 +151,7 @@ code {
 }
 
 .nav-brand {
+  flex: 1 1 auto;
   display: flex;
   align-items: center;
   min-width: 0;
@@ -213,6 +214,7 @@ code {
 }
 
 .nav-links {
+  flex: 0 0 auto;
   display: flex;
   gap: 0.15rem;
   list-style: none;
@@ -1110,10 +1112,6 @@ code {
   max-width: 42rem;
 }
 
-.about-title span {
-  display: block;
-}
-
 .site-footer {
   background: var(--espresso);
   color: var(--cream);
@@ -1358,6 +1356,15 @@ code {
 }
 
 @media (max-width: 640px) {
+  .nav-pill {
+    gap: 0.2rem;
+    padding-inline: 0.55rem 0.4rem;
+  }
+
+  .nav-links {
+    gap: 0;
+  }
+
   .nav-links a {
     padding: 0 0.55rem;
   }
@@ -1385,6 +1392,31 @@ code {
   .catalog-arrow {
     width: 2.45rem;
     height: 2.45rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .site-header {
+    padding-inline: 0.55rem;
+  }
+
+  .nav-pill {
+    gap: 0.1rem;
+    padding-left: 0.55rem;
+  }
+
+  .nav-links a {
+    min-height: 2.35rem;
+    padding-inline: 0.38rem;
+    font-size: 0.82rem;
+  }
+
+  .nav-wordmark-line {
+    font-size: 0.84rem;
+  }
+
+  .nav-wordmark-games {
+    font-size: 0.47rem;
   }
 }
 
