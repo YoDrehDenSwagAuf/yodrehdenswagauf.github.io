@@ -40,7 +40,7 @@ export function GameCard({ game }: Props) {
           catalogNo={game.catalogNo}
           status={game.status}
           src={game.coverHover ? undefined : (game.coverGif ?? game.coverImage)}
-          fallback={game.coverImage ?? game.coverFallback}
+          fallback={game.coverFallback ?? game.coverImage}
           hover={game.coverHover}
           active={hot}
         />
