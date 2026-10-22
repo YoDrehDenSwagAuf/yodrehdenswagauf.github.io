@@ -1,6 +1,6 @@
 export type ProjectStatus = 'in-progress' | 'prototype' | 'coming-soon' | 'released'
 export type ProjectCategory = 'games' | 'mods' | 'websites' | 'apps'
-export type Platform = 'Playdate' | 'PC' | 'Web' | 'Android' | 'Mod' | 'Multi'
+export type Platform = 'Playdate' | 'PC' | 'PC / Android' | 'Web' | 'Android' | 'Mod' | 'Multi'
 export type CoverId = 'cranky-tanks' | 'dental-drill' | 'coming-soon-a' | 'coming-soon-b'
 
 export type ProjectAction = { label: string; href: string | null; hint: string }
@@ -47,37 +47,37 @@ const privateRepoAction = (label = 'GitHub'): ProjectAction => ({
 const games: Project[] = [
   {
     id: 'cranky-tanks', catalogNo: '01', title: 'Cranky Tanks',
-    blurb: 'Top-down arena tank duels for Playdate. Drive with the D-pad, aim with the crank, fire bank shots, and control a steerable rocket.',
-    platform: 'Playdate', status: 'in-progress', cover: 'cranky-tanks',
-    coverGif: '/assets/cranky-tanks-card.gif', coverImage: '/assets/cranky-tanks-billboard.png', coverFallback: '/assets/cranky-tanks-billboard.png',
-    coverHover: { idle: '/assets/cranky-tanks-idle.jpg', intro: '/assets/cranky-tanks-intro.mp4', loop: '/assets/cranky-tanks-card.gif' },
-    actions: [privateRepoAction(), { label: 'Catalog', href: null, hint: 'Coming later' }],
+    blurb: 'Tiny tanks, serious angles. Battle through 37 missions, master ricochet shots, survive enemy waves, and create your own levels.',
+    platform: 'Playdate', status: 'released', cover: 'cranky-tanks',
+    coverImage: 'https://cdn.pdgamez.com/images/itch/Cranky_Tanks_main_f873ebb7.webp',
+    coverFallback: '/assets/cranky-tanks-billboard.png',
+    actions: [{ label: 'itch.io', href: 'https://yodrehdenswagauf.itch.io/cranky-tanks', hint: 'View game on itch.io' }],
   },
   {
-    id: 'pdskate', catalogNo: '02', title: 'pdskate', workingTitle: 'Stick Skate',
-    blurb: 'A compact Playdate skate project built around quick sessions, expressive movement, and a name that will grow into Stick Skate.',
-    platform: 'Playdate', status: 'in-progress', cover: 'coming-soon-a',
-    actions: [privateRepoAction(), { label: 'Preview', href: null, hint: 'Coming later' }],
+    id: 'puck-noir-club', catalogNo: '02', title: 'Puck Noir Club',
+    blurb: 'One puck. Eight challengers. Take on an eccentric underground club in this crank-powered 1-bit air hockey tournament.',
+    platform: 'Playdate', status: 'released', cover: 'coming-soon-a',
+    coverImage: 'https://cdn.pdgamez.com/images/itch/Puck_Noir_Club_main_e2ad8be7.webp',
+    actions: [{ label: 'itch.io', href: 'https://yodrehdenswagauf.itch.io/puck-noir-club', hint: 'View game on itch.io' }],
   },
   {
-    id: 'wrong-hat-wrong-guy', catalogNo: '03', title: 'Wrong Hat, Wrong Guy',
-    blurb: 'A 1-bit detective game played through a viewfinder. Zoom with the crank, pan with the D-pad, and frame the right suspect.',
-    platform: 'Playdate', status: 'prototype', cover: 'coming-soon-b', actions: [privateRepoAction()],
+    id: 'knockout-cup', catalogNo: '03', title: 'Knockout Cup',
+    blurb: 'Arcade football with 13 nations, crunching tackles, unique specials, and over-the-top ultimates. Take the cup on Playdate.',
+    platform: 'Playdate', status: 'released', cover: 'coming-soon-b',
+    coverImage: 'https://cdn.pdgamez.com/images/itch/Knockout_Cup_main_24e08ea5.webp',
+    actions: [{ label: 'itch.io', href: 'https://yodrehdenswagauf.itch.io/knockout-cup', hint: 'View game on itch.io' }],
   },
   {
-    id: 'dental-drill-disco', catalogNo: '04', title: 'Dental Drill Disco', workingTitle: 'Nerve! / Drillbill',
-    blurb: 'A soft-cartoon arcade prototype where the crank controls drill speed and careful angles keep the nerve safe.',
-    platform: 'Playdate', status: 'prototype', cover: 'dental-drill', actions: [privateRepoAction()],
+    id: 'house-rules-pong-night', catalogNo: '04', title: 'HOUSE RULES: PONG NIGHT',
+    blurb: 'A crank-powered beer pong party game where every house has its own rules. Coming to Playdate.',
+    platform: 'Playdate', status: 'coming-soon', cover: 'coming-soon-a',
+    actions: [{ label: 'Coming soon', href: null, hint: 'Playdate release to be announced' }],
   },
   {
-    id: 'hexcrank', catalogNo: '05', title: 'Hexcrank',
-    blurb: 'A top-down action RPG prototype where crank patterns cast spells such as HEX BOLT and CRANKBURST.',
-    platform: 'Playdate', status: 'prototype', cover: 'coming-soon-a', actions: [privateRepoAction()],
-  },
-  {
-    id: 'oktoberfest-tray', catalogNo: '06', title: 'Oktoberfest Tray',
-    blurb: 'Navigate packed table rows, slide toward guests, and balance a tray of beer with the crank in this playable hall prototype.',
-    platform: 'Playdate', status: 'prototype', cover: 'coming-soon-b', actions: [privateRepoAction()],
+    id: 'agent404-killprocess', catalogNo: '05', title: 'Agent404_KillProcess',
+    blurb: 'An ASCII-inspired action game where combat rewrites the digital world around you. In development for PC and Android.',
+    platform: 'PC / Android', status: 'coming-soon', cover: 'coming-soon-b',
+    actions: [{ label: 'Coming soon', href: null, hint: 'PC and Android release to be announced' }],
   },
 ]
 
@@ -96,16 +96,6 @@ const websites: Project[] = [
     blurb: 'A polished automotive website concept designed to present premium vehicles with a clean, confident visual identity.',
     platform: 'Web', status: 'coming-soon', cover: 'coming-soon-b', actions: [{ label: 'Website', href: null, hint: 'Coming soon' }],
   },
-  {
-    id: 'frame-weaver', catalogNo: '02', title: 'Frame Weaver',
-    blurb: 'A browser-based sprite editor for drawing, refining, and generating coherent animation frames with an extensible workflow.',
-    platform: 'Web', status: 'prototype', cover: 'coming-soon-a', actions: [{ label: 'Preview', href: null, hint: 'Not public yet' }],
-  },
-  {
-    id: 'maskreel', catalogNo: '03', title: 'Maskreel',
-    blurb: 'An editor concept for shaping generated video frame by frame, correcting key moments, and building consistent loops.',
-    platform: 'Web', status: 'coming-soon', cover: 'dental-drill', actions: [{ label: 'Preview', href: null, hint: 'Coming later' }],
-  },
 ]
 
 const apps: Project[] = [
@@ -122,7 +112,7 @@ const apps: Project[] = [
 ]
 
 export const projectCollections: ProjectCollection[] = [
-  { id: 'games', label: 'Games', eyebrow: ['Playdate first', 'Six projects'], title: 'The games.', description: 'Small games with strong controls, readable ideas, and enough personality to stay in your head after a short session.', projects: games },
+  { id: 'games', label: 'Games', eyebrow: ['Playdate first', 'Three releases'], title: 'The games.', description: 'Small games with strong controls, readable ideas, and enough personality to stay in your head after a short session.', projects: games },
   { id: 'mods', label: 'Mods', eyebrow: ['Known worlds', 'New life'], title: 'The mods.', description: 'Mods that add visible systems, atmosphere, and fresh reasons to return to familiar worlds.', projects: mods },
   { id: 'websites', label: 'Websites', eyebrow: ['Design and code', 'Browser based'], title: 'The websites.', description: 'Websites and browser tools that combine clear interfaces with a visual identity of their own.', projects: websites },
   { id: 'apps', label: 'Apps', eyebrow: ['Useful ideas', 'Mobile first'], title: 'The apps.', description: 'Focused app concepts for everyday tasks and unusual hardware, built to feel direct and intentional.', projects: apps },
